@@ -1,0 +1,213 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="{% static "css/airline.css" %}">
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <ul>
+                <a href="{% url 'home' %}">
+                    <li>Travellar</li>
+                </a>
+                <a href="{% url 'airline' %}">
+                    <li>Airlines</li>
+                </a>
+                <a href="{% url 'risk' %}">
+                    <li>Risk Action</li>
+                </a>
+                <a href="{% url 'crew' %}">
+                    <li>Crew</li>
+                </a>
+                <a href="{% url 'journey' %}">
+                    <li>Journey Search</li>
+                </a>
+            </ul>
+            <img src="{% static "img/logo.png" %}" width="150px" style="margin: auto;">
+        </nav>
+    </div>
+    <div class="travellersection">
+        <h1>Welcome From Myanmar Airline</h1>
+        <table>
+            <h2>Airline Table</h2>
+            <thead>
+                <th style="border-top-left-radius: 10px;">Operating Date</th>
+                <th>Airline</th>
+                <th>Airline Name</th>
+                <th>Airline No</th>
+                <th>Depature Port</th>
+                <th>Arrival Port</th>
+                <th>Depature Date and Time</th>
+                <th>Arrival Date and Time</th>
+                <th>Flight Status</th>
+                <th>Delay Issue</th>
+                <th style="border-top-right-radius: 10px;">Remarks</th>
+            </thead>
+            <tbody class="tbody1">
+                <td>10.10.23</td>
+                <td>MA</td>
+                <td>Yg to Mdy</td>
+                <td>007</td>
+                <td>Yangon</td>
+                <td>Mandalay</td>
+                <td>10.10.23 1AM</td>
+                <td>10.10.23 2AM</td>
+                <td>Fine</td>
+                <td>5 min</td>
+                <td></td>
+            </tbody>
+            <tbody class="tbody2">
+                <td>10.10.23</td>
+                <td>MA</td>
+                <td>Yg to Mdy</td>
+                <td>007</td>
+                <td>Yangon</td>
+                <td>Mandalay</td>
+                <td>10.10.23 1AM</td>
+                <td>10.10.23 2AM</td>
+                <td>Fine</td>
+                <td>5 min</td>
+                <td></td>
+            </tbody>
+            <tbody class="tbody1">
+                <td>10.10.23</td>
+                <td>MA</td>
+                <td>Yg to Mdy</td>
+                <td>007</td>
+                <td>Yangon</td>
+                <td>Mandalay</td>
+                <td>10.10.23 1AM</td>
+                <td>10.10.23 2AM</td>
+                <td>Fine</td>
+                <td>5 min</td>
+                <td></td>
+            </tbody>
+            <tbody class="tbody2">
+                <td>10.10.23</td>
+                <td>MA</td>
+                <td>Yg to Mdy</td>
+                <td>007</td>
+                <td>Yangon</td>
+                <td>Mandalay</td>
+                <td>10.10.23 1AM</td>
+                <td>10.10.23 2AM</td>
+                <td>Fine</td>
+                <td>5 min</td>
+                <td></td>
+            </tbody>
+            <tbody class="tbody1">
+                <td>10.10.23</td>
+                <td>MA</td>
+                <td>Yg to Mdy</td>
+                <td>007</td>
+                <td>Yangon</td>
+                <td>Mandalay</td>
+                <td>10.10.23 1AM</td>
+                <td>10.10.23 2AM</td>
+                <td>Fine</td>
+                <td>5 min</td>
+                <td></td>
+            </tbody>
+            <tbody class="tbody2">
+                <td>10.10.23</td>
+                <td>MA</td>
+                <td>Yg to Mdy</td>
+                <td>007</td>
+                <td>Yangon</td>
+                <td>Mandalay</td>
+                <td>10.10.23 1AM</td>
+                <td>10.10.23 2AM</td>
+                <td>Fine</td>
+                <td>5 min</td>
+                <td></td>
+            </tbody>
+            <tbody class="tbody1">
+                <td>10.10.23</td>
+                <td>MA</td>
+                <td>Yg to Mdy</td>
+                <td>007</td>
+                <td>Yangon</td>
+                <td>Mandalay</td>
+                <td>10.10.23 1AM</td>
+                <td>10.10.23 2AM</td>
+                <td>Fine</td>
+                <td>5 min</td>
+                <td></td>
+            </tbody>
+            <tbody class="tbody2">
+                <td>10.10.23</td>
+                <td>MA</td>
+                <td>Yg to Mdy</td>
+                <td>007</td>
+                <td>Yangon</td>
+                <td>Mandalay</td>
+                <td>10.10.23 1AM</td>
+                <td>10.10.23 2AM</td>
+                <td>Fine</td>
+                <td>5 min</td>
+                <td></td>
+            </tbody>
+            <tbody class="tbody1">
+                <td>10.10.23</td>
+                <td>MA</td>
+                <td>Yg to Mdy</td>
+                <td>007</td>
+                <td>Yangon</td>
+                <td>Mandalay</td>
+                <td>10.10.23 1AM</td>
+                <td>10.10.23 2AM</td>
+                <td>Fine</td>
+                <td>5 min</td>
+                <td></td>
+            </tbody>
+            <tbody class="tbody2">
+                <td>10.10.23</td>
+                <td>MA</td>
+                <td>Yg to Mdy</td>
+                <td>007</td>
+                <td>Yangon</td>
+                <td>Mandalay</td>
+                <td>10.10.23 1AM</td>
+                <td>10.10.23 2AM</td>
+                <td>Fine</td>
+                <td>5 min</td>
+                <td></td>
+            </tbody>
+            <tbody class="tbody1">
+                <td>10.10.23</td>
+                <td>MA</td>
+                <td>Yg to Mdy</td>
+                <td>007</td>
+                <td>Yangon</td>
+                <td>Mandalay</td>
+                <td>10.10.23 1AM</td>
+                <td>10.10.23 2AM</td>
+                <td>Fine</td>
+                <td>5 min</td>
+                <td></td>
+            </tbody>
+            <tbody class="tbody2">
+                <td style="border-bottom-left-radius: 10px;">10.10.23</td>
+                <td>MA</td>
+                <td>Yg to Mdy</td>
+                <td>007</td>
+                <td>Yangon</td>
+                <td>Mandalay</td>
+                <td>10.10.23 1AM</td>
+                <td>10.10.23 2AM</td>
+                <td>Fine</td>
+                <td style="border-bottom-right-radius: 10px;">5 min</td>
+                <td></td>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+
+</html>
