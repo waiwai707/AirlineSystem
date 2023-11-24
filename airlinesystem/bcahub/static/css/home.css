@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
+:root{
+    --bg-color: #6792E7;
+    --hov-color: rgba(213, 216, 220, 0.275);
+}
+
+*{
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;  
+}
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.container {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+}
+h1,h2{
+    font-family: Agbalumo;
+    font-weight: 100;
+}
+nav{
+    /* width: fit-content; */
+    height: 100vh;
+    padding: 10px 10px;
+    background-color: var(--bg-color);
+    position: relative;
+    /* top: -45px; */
+}
+nav ul{
+    margin-top: 90%;
+}
+nav ul a{
+    text-decoration: none;
+    cursor: pointer;
+}
+nav ul li{
+    padding: 10px;
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 600;
+    margin-bottom: 20%;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    color: black;
+    transition: 0.5s;
+}
+nav ul  li:hover{
+    background-color: var(--hov-color);
+    border-radius: 10px;
+    color: aqua;
+    font-size: 18px;
+}
+/* end nav bar */
+
+.travellersection{
+    padding-top: 20px;
+}
+.travellersection h1{
+    margin-bottom: 20px;
+    text-align: center;
+}
+.travellersection h2{
+    text-align: center;
+    margin-bottom: 10px;
+}
+table{
+    width: 140%;
+    align-items: center;
+    text-align: center;
+    border-collapse: collapse;
+    /* border-left: 1px solid black; */
+    position: relative;
+    left: -100px;
+}
+td:nth-child(n + 2){
+    border-left: 1px solid black;
+    /* border-right: 1px solid black; */
+    
+}
+th{
+    background-color: #6792E7;
+    height: 50px;
+}
+tbody{
+    height: 40px;
+}
+.tbody1{
+    background-color: aliceblue;
+}
+.tbody2{
+    background-color: rgb(211, 228, 243);
+}
+tbody:hover{
+    background-color: rgba(207, 208, 210, 0.431);
+}
