@@ -13,6 +13,8 @@ class Traveller(models.Model):
     Arrival_Port = models.CharField(max_length=10, blank=False) 
     Arrival_Date_Time = models.DateField()
 
+
+
 class Airline(models.Model):
     Operating_date = models.DateTimeField()
     Airline = models.CharField(max_length=20, blank=False)

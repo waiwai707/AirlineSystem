@@ -64,9 +64,11 @@ nav ul  li:hover{
 
 .travellersection{
     padding-top: 20px;
+    margin-left: 25%;
+
 }
 .travellersection h1{
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     text-align: center;
 }
 .travellersection h2{

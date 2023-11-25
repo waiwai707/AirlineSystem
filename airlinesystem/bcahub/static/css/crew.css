@@ -64,6 +64,7 @@ nav ul  li:hover{
 
 .travellersection{
     padding-top: 20px;
+    margin-left: 15%;
 }
 .travellersection h1{
     margin-bottom: 20px;
@@ -87,7 +88,7 @@ td:nth-child(n + 2){
     
 }
 th{
-    background-color: #6792E7;
+    background-color: #7aa5e7;
     height: 50px;
 }
 tbody{
