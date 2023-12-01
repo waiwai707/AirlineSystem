@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path, include
-from bcahub.appviews import view
+from bcahub.appviews import view 
 
 from bcahub.views import airline_views
 

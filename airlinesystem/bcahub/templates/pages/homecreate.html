@@ -1,0 +1,152 @@
+
+{% block page_content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>fruitsdata</title>
+</head>
+<body>
+<style>
+    .aa{
+    width:120%;
+    height:620px;
+    border: 1px solid rgb(39, 202, 216);
+    background-color: rgb(157, 207, 207);
+    color: brown;
+    border-radius: 30px  ;
+    
+    
+
+}
+.form-control{
+    width:300px;
+    height:10px;
+    
+   
+   
+    border-radius: 20px;
+    padding:8px;
+    margin-left: 50px;
+    border-bottom: 1px solid #fff;
+   
+    background: transparent;
+    margin-top: 20px;
+}
+.card{
+    width:600px;
+    height:600px;
+    border: 1px solid rgb(39, 202, 216);
+    background-color: rgb(124, 77, 64);
+    color: rgb(151, 194, 190);
+    border-radius: 20px 80px 30% 0;
+   margin-top: -40px;
+    margin-left: 20%;
+}
+.submit{
+    width:60px;
+    height: 40px;
+    border: 1px solid rgb(70, 39, 39);
+    margin-top: 10px;
+    border-radius: 10px;
+    background-color: rgb(67, 35, 35);
+    color: aliceblue;
+    margin-left: 20px;
+}
+.hh{
+    font-size: 15px;
+    margin-left: 50px;
+}
+.Oo{
+    
+    width: 40px;
+    height: 15px;
+    background-color: brown;
+    font-size: 1px;
+    border: 1px solid rgb(79, 39, 27);
+    border-radius: 5px;
+    margin-left: 250px;
+    margin-top: 20px;
+}
+</style>
+    
+    <div class="aa">
+        <div class="bb">
+            <a href="{% url 'home' %}">
+                <button type="button" class="Oo" id="back-button">
+                    <span class="dd"></span> 
+                </button>
+            </a>
+        </div><br>
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <div class="messs" role="alert">{{ message }}</div>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <div class="card">
+            <h5 class="hh" id="card-header">Add New Travel Table</h5>
+            <div class="card-body">
+                <form action="{% url 'storename' %}" method="POST">
+                    {% csrf_token %}
+                    <div class="form">
+                    
+                        <label for="Flight"><strong>Flight:</strong></label>
+                        <input type="text" class="form-control" id="Flight" name="Flight" />
+                    </div>
+                    <div class="form">
+                    
+                        <label for="TimeFrame"><strong>TimeFrame:</strong></label>
+                        <input type="text" class="form-control" id="TimeFrame" name="TimeFrame" />
+                    </div>
+                    <div class="form">
+                        <label for="Name"><strong>Name:</strong></label>
+                        <input type="text" class="form-control" id="Name" name="Name" />
+                    </div>
+                    <div class="form">
+                        <label for="DOB"><strong>DOB:</strong></label>
+                        <input type="text" class="form-control" id="DOB" name="DOB" />
+                    </div>    
+                    <div class="form">
+                        <label for="NRC"><strong>NRC:</strong></label>
+                        <input type="text" class="form-control" id="NRC" name="NRC" />
+                    </div>   
+                    <div class="form">
+                        <label for="Gender"><strong>Gender:</strong></label>
+                        <input type="text" class="form-control" id="Gender" name="Gender" />
+                    </div>
+                    <div class="form">
+                        <label for="Depature_Port"><strong>Depature_Port:</strong></label>
+                        <input type="text" class="form-control" id="Depature_Port" name="Depature_Port" />
+                    </div>
+                        
+                    <div class="form">
+                        <label for="Depature_Date_time"><strong>Depature_Date_time:</strong></label>
+                        <input type="text" class="form-control" id="Depature_Date_time" name="Depature_Date_time" />
+                    </div>    
+                        
+                    <div class="form">
+                        <label for="Arrival_Port"><strong>Arrival_Port:</strong></label>
+                        <input type="text" class="form-control" id="Arrival_Port" name="Arrival_Port" />
+                    </div>    
+                    <div class="form">
+                        <label for="Arrival_Date_Time"><strong>Arrival_Date_Time:</strong></label>
+                        <input type="text" class="form-control" id="Arrival_Date_Time" name="Arrival_Date_Time" />
+                    </div>    
+                        
+                   
+
+                 
+                    <button type="submit" class="submit" id="post-button">Post</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+{% endblock %}

@@ -5,12 +5,15 @@ from bcahub.models import Traveller
 
 from django.contrib import messages
 
+
+
+
 def base(request): 
     data = Traveller.objects.raw('SELECT * FROM bcahub_airline')
-    return render(request, 'shop/home.html', {'data': data})
+    return render(request, 'pages/home.html', {'data': data})
 
 def createtravel(request):
-    return render(request,'shop/homecreate.html')
+    return render(request,'pages/homecreate.html')
 
 def store(request):
     Air= Traveller()
@@ -26,4 +29,4 @@ def store(request):
     Air.Arrival_Date_Time = request.POST.get('Arrival_Date_Time')
     Air.save()
     messages.success(request,"New Travelling data Added Successfully")
-    return render(request,'shop/homecreate.html')
+    return render(request,'pages/homecreate.html')
