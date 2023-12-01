@@ -1,0 +1,79 @@
+{% extends 'inc/base.html' %}
+{% block content %}
+{% load static %}
+<div class="container my-3">
+    <div class="d-flex justify-content-end">
+         <a href="{% url 'home' %}">
+            <button type="button" class="btn text-white" style="background-color:#800517">
+                <i class="fa-solid fa-pencil"></i>
+            </button>
+        </a>
+
+    </div><br>
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <div class="alert alert-primary" role="alert">{{ message }}</div>
+        {% endfor %}
+
+    </ul>
+    {% endif %}
+    <div class="card">
+    <h5 class="card-hearder text-white" style="background-color: #800517">Edit Travel customer</h5>
+    <div class="card-body">
+        
+        <form action="{% url 'updatetravel' air.id %}" method="POST">
+            {% csrf_token %}
+            <div class="form">
+                    
+                <label for="Flight"><strong>Flight:</strong></label>
+                <input type="text" class="form-control" id="Flight" name="Flight" value="{{air.Flight}}"/>
+            </div>
+            <div class="form">
+                    
+                <label for="TimeFrame"><strong>TimeFrame:</strong></label>
+                <input type="text" class="form-control" id="TimeFrame" name="TimeFrame" value="{{air.TimeFrame}}"/>
+            </div>
+            <div class="form">
+                <label for="Name"><strong>Name:</strong></label>
+                <input type="text" class="form-control" id="Name" name="Name" value="{{air.Name}}"/>
+            </div>
+            <div class="form">
+                <label for="DOB"><strong>DOB:</strong></label>
+                <input type="text" class="form-control" id="DOB" name="DOB" value="{{air.DOB}}"/>
+            </div>    
+            <div class="form">
+                <label for="NRC"><strong>NRC:</strong></label>
+                <input type="text" class="form-control" id="NRC" name="NRC" value="{{air.NRC}}"/>
+            </div>   
+            <div class="form">
+                <label for="Gender"><strong>Gender:</strong></label>
+                <input type="text" class="form-control" id="Gender" name="Gender" value="{{air.Gender}}"/>
+            </div>
+            <div class="form">
+                <label for="Depature_Port"><strong>Depature_Port:</strong></label>
+                <input type="text" class="form-control" id="Depature_Port" name="Depature_Port" value="{{air.Depature_Port}}"/>
+            </div>
+                
+            <div class="form">
+                <label for="Depature_Date_time"><strong>Depature_Date_time:</strong></label>
+                <input type="text" class="form-control" id="Depature_Date_time" name="Depature_Date_time" value="{{air.Depature_Date_time}}" />
+            </div>    
+                
+            <div class="form">
+                <label for="Arrival_Port"><strong>Arrival_Port:</strong></label>
+                <input type="text" class="form-control" id="Arrival_Port" name="Arrival_Port" value="{{air.Arrival_Port}}"/>
+            </div>    
+            <div class="form">
+                <label for="Arrival_Date_Time"><strong>Arrival_Date_Time:</strong></label>
+                <input type="text" class="form-control" id="Arrival_Date_Time" name="Arrival_Date_Time" value="{{air.Arrival_Date_Time}}"/>
+            </div> 
+           
+  
+            <button type="submit" class="btn my-3 text-white" style="background-color: #800517">Update</button>
+        </form>
+
+    </div>
+    </div>
+</div>
+{% endblock %}

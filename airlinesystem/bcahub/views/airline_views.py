@@ -30,3 +30,23 @@ def store(request):
     Air.save()
     messages.success(request,"New Travelling data Added Successfully")
     return render(request,'pages/homecreate.html')
+
+def updateViewtravel(request,pk):
+    air = Traveller.objects.get(id = pk)
+    return render(request,'pages/homeedit.html',{'air':air})
+
+def updatetravel(request,pk):
+    air = Traveller.objects.get(id = pk)  
+    air.Flight = request.POST.get('Flight')
+    air.TimeFrame = request.POST.get('TimeFrame')
+    air.Name = request.POST.get('Name')
+    air.DOB = request.POST.get('DOB')
+    air.NRC = request.POST.get('NRC')
+    air.Gender = request.POST.get('Gender')
+    air.Depature_Port = request.POST.get('Depature_Port')
+    air.Depature_Date_time = request.POST.get('Depature_Date_time')
+    air.Arrival_Port = request.POST.get('Arrival_Port')
+    air.Arrival_Date_Time = request.POST.get('Arrival_Date_Time')
+    air.save()
+    messages.success(request,"Airline Customer Update Successfully")
+    return redirect('/home')

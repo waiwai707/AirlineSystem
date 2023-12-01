@@ -6,6 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/1c87cdcf14.js" crossorigin="anonymous"></script>
     <title>Home Page</title>
     <link rel="stylesheet" href="{% static "css/home.css" %}">
 </head>
@@ -47,8 +48,41 @@
                 <th>Depature Port</th>
                 <th>Depature Date and Time</th>
                 <th>Arrival Port</th>
+              
                 <th style="border-top-right-radius: 10px;">Arrival Date and Time</th>
+                <th style="border-top-right-radius:10px; width: 10%;" >Action</th>
+                <th style="border-top-right-radius:10px; width: 10%;" >Action</th>
             </thead>
+            <tbody class="u">
+                {% for bcahub in airlist %}
+                <tr>
+                    <td class="h">
+                        {{ bcahub.TimeFrame}}
+                    </td>
+                    <td class="o">
+                        {{ bcahub.Name}}
+                    </td>
+                    <td class="t">
+                        {{ bcahub.D.O.B}}
+                    </td>
+                    <td class="p">
+                        {{ bcahub.NRC}}
+                    </td>
+                    <td>
+                        {{ bcahub.Gender}}
+                    </td>
+                    <td>
+                        {{ bcahub.Depature_Port}}
+                    </td>
+                    <td>
+                        {{ bcahub.Depature_Date_time}}
+                    </td>
+                    <td>
+                        {{ bcahub.Arrival_Port}}
+                    </td>
+                 
+                </tr>
+            </tbody>
             <tbody class="tbody1">
                 <td>Myanmar Air line</td>
                 <td>16:00</td>
@@ -60,6 +94,17 @@
                 <td>2 A.M</td>
                 <td>4 Am</td>
                 <td>20.10.23 4A.M</td>
+             
+                <a href="{% url 'updateViewtravel' bcahub.id %}" class="text-decoration-none">
+                   <td><span class="fa fa-pen text-white"></span> </td> 
+                </a>
+                
+                    
+                <a href="{% url 'createtravel' %}" class="text-decoration-none">
+                <td><span class="fa-solid fa-folder-plus"></span> </td> 
+                </a>
+                    
+                
             </tbody>
             <tbody class="tbody2">
                 <td>Myanmar Air line</td>
@@ -193,7 +238,12 @@
                 <td>4 Am</td>
                 <td style="border-bottom-right-radius: 10px;">20.10.23 4A.M</td>
             </tbody>
+            
+              
+              
         </table>
+    
+     
     </div>
 
 </body>
