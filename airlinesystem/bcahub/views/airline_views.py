@@ -9,7 +9,7 @@ from django.contrib import messages
 
 
 def base(request): 
-    data = Traveller.objects.raw('SELECT * FROM bcahub_airline')
+    data = Traveller.objects.raw('select * from bcahub_traveller')
     return render(request, 'pages/home.html', {'data': data})
 
 def createtravel(request):
@@ -17,16 +17,16 @@ def createtravel(request):
 
 def store(request):
     Air= Traveller()
-    Air.Flight = request.POST.get('Flight')
-    Air.TimeFrame = request.POST.get('TimeFrame')
-    Air.Name = request.POST.get('Name')
-    Air.DOB = request.POST.get('DOB')
-    Air.NRC = request.POST.get('NRC')
-    Air.Gender = request.POST.get('Gender')
-    Air.Depature_Port = request.POST.get('Depature_Port')
-    Air.Depature_Date_time = request.POST.get('Depature_Date_time')
-    Air.Arrival_Port = request.POST.get('Arrival_Port')
-    Air.Arrival_Date_Time = request.POST.get('Arrival_Date_Time')
+    Air.flight = request.POST.get('Flight')
+    Air.timeFrame = request.POST.get('TimeFrame')
+    Air.name = request.POST.get('Name')
+    Air.dob = request.POST.get('DOB')
+    Air.nrc = request.POST.get('NRC')
+    Air.gender = request.POST.get('Gender')
+    Air.depature_port = request.POST.get('Depature_Port')
+    Air.depature_date_time = request.POST.get('Depature_Date_time')
+    Air.arrival_port = request.POST.get('Arrival_Port')
+    Air.arrival_date_time = request.POST.get('Arrival_Date_Time')
     Air.save()
     messages.success(request,"New Travelling data Added Successfully")
     return render(request,'pages/homecreate.html')
@@ -37,16 +37,16 @@ def updateViewtravel(request,pk):
 
 def updatetravel(request,pk):
     air = Traveller.objects.get(id = pk)  
-    air.Flight = request.POST.get('Flight')
-    air.TimeFrame = request.POST.get('TimeFrame')
-    air.Name = request.POST.get('Name')
-    air.DOB = request.POST.get('DOB')
-    air.NRC = request.POST.get('NRC')
-    air.Gender = request.POST.get('Gender')
-    air.Depature_Port = request.POST.get('Depature_Port')
-    air.Depature_Date_time = request.POST.get('Depature_Date_time')
-    air.Arrival_Port = request.POST.get('Arrival_Port')
-    air.Arrival_Date_Time = request.POST.get('Arrival_Date_Time')
+    air.flight = request.POST.get('Flight')
+    air.timeFrame = request.POST.get('TimeFrame')
+    air.name = request.POST.get('Name')
+    air.dob = request.POST.get('DOB')
+    air.nrc = request.POST.get('NRC')
+    air.gender = request.POST.get('Gender')
+    air.depature_port = request.POST.get('Depature_Port')
+    air.depature_date_time = request.POST.get('Depature_Date_time')
+    air.arrival_port = request.POST.get('Arrival_Port')
+    air.arrival_date_time = request.POST.get('Arrival_Date_Time')
     air.save()
     messages.success(request,"Airline Customer Update Successfully")
     return redirect('/home')

@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/1c87cdcf14.js" crossorigin="anonymous"></script>
     <title>Home Page</title>
-    <link rel="stylesheet" href="{% static "css/home.css" %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
 </head>
 
 <body>
@@ -16,23 +16,23 @@
         
         <nav>
             <ul>
-                <a href="{% url 'home' %}">
+                <a href="{% url 'createtravel' %}">
                     <li>Travellar</li>
                 </a>
-                <a href="{% url 'airline' %}">
+                <a href="{% url 'createtravel' %}">
                     <li>Airlines</li>
                 </a>
-                <a href="{% url 'risk' %}">
+                <a href="{% url 'createtravel' %}">
                     <li>Risk Action</li>
                 </a>
-                <a href="{% url 'crew' %}">
+                <a href="{% url 'createtravel' %}">
                     <li>Crew</li>
                 </a>
-                <a href="{% url 'journey' %}">
+                <a href="{% url 'createtravel' %}">
                     <li>Journey Search</li>
                 </a>
             </ul>
-            <img src="{% static "img/logo.png" %}" width="150px" style="margin: auto;">
+            <img src="{% static 'img/logo.png' %}" width="150px" style="margin: auto;">
         </nav>
     </div>
     {% if messages %}
@@ -58,7 +58,7 @@
                 <th>Depature Port</th>
                 <th>Depature Date and Time</th>
                 <th>Arrival Port</th>
-              
+               
                 <th style="border-top-right-radius: 10px;">Arrival Date and Time</th>
                 <th style="border-top-right-radius:10px; width: 10%;" >Action </th>
                 <th style="border-top-right-radius:10px; width: 10%;" >Action </th>
@@ -69,57 +69,64 @@
             
             <tbody class="tbody1">
                
-                {% for bcahub in home%}
+                {% for bcahub in data%}
                     <tr>
                         <td class="h">
-                        {{ bcahub.Flight}}
+                        {{ bcahub.flight}}
                     </td>
                         <td class="h">
-                            {{ bcahub.TimeFrame}}
+                            {{ bcahub.timeFrame}}
                         </td>
                         <td class="o">
-                            {{ bcahub.Name}}
+                            {{ bcahub.name}}
                         </td>
                         <td class="t">
-                            {{ bcahub.D.O.B}}
+                            {{ bcahub.dob}}
                         </td>
                         <td class="p">
-                            {{ bcahub.NRC}}
+                            {{ bcahub.nrc}}
                         </td>
                         <td>
-                            {{ bcahub.Gender}}
+                            {{ bcahub.gender}}
                         </td>
                         <td>
-                            {{ bcahub.Depature_Port}}
+                            {{ bcahub.depature_port}}
                         </td>
                         <td>
-                            {{ bcahub.Depature_Date_time}}
+                            {{ bcahub.depature_date_time}}
                         </td>
                         <td>
-                            {{ bcahub.Arrival_Port}}
+                            {{ bcahub.arrival_port}}
                         </td>
-                       
+                        <td>
+                            {{ bcahub.arrival_date_time}}
+                        </td>
                         <td class ="action">          
-                        </a>
-                        <a href="{% url 'updateViewtravel' bcahub.id %}" class="text-decoration-none">
-                            <span class="fa fa-pen text-white"></span>
-                                </i>
-                        </a>
+                     
+                        
+                            <span class="fa fa-pen text-white">
+                                <a href="{% url 'updateViewtravel' bcahub.id %}" class="text-decoration-none"></a>
+                            </span>
+                                
+                        
         
-                        <a href="{% url 'createtravel' %}"  class="text-decoration-none">
                        
-                            <i class="fa-solid fa-folder-plus"></i>
+                       
+                            <span class="fa-solid fa-folder-plus">
+                                <a href="{% url 'createtravel' %}"  class="text-decoration-none"> </a>
+                            </apan>
                 
                          
-                        </a>
+                       
                        
                         </td>
                       
                         </tr>
-                    </tbody>
                         {% endfor %}
+                    </tbody>
+                       
                 </tr>
-           
+<!--            
             <tbody class="tbody2">
                 <td>Myanmar Air line</td>
                 <td>16:00</td>
@@ -132,6 +139,7 @@
                 <td>4 Am</td>
                 <td>20.10.23 4A.M</td>
                
+
                 
             </tbody>
             <tbody class="tbody1">
@@ -145,7 +153,7 @@
                 <td>2 A.M</td>
                 <td>4 Am</td>
                 <td>20.10.23 4A.M</td>
-                <td>   <i class="fa fa-pen text-white"></i></td>
+               
 
             </tbody>
             <tbody class="tbody2">
@@ -255,7 +263,7 @@
                 <td>2 A.M</td>
                 <td>4 Am</td>
                 <td style="border-bottom-right-radius: 10px;">20.10.23 4A.M</td>
-            </tbody>
+            </tbody> -->
          
        
                 
