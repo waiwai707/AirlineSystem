@@ -64,9 +64,11 @@ nav ul  li:hover{
 
 .travellersection{
     padding-top: 20px;
+    margin-left: 25%;
+
 }
 .travellersection h1{
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     text-align: center;
 }
 .travellersection h2{
@@ -102,4 +104,8 @@ tbody{
 }
 tbody:hover{
     background-color: rgba(207, 208, 210, 0.431);
+}
+.tbody3{
+    height: 40px;
+    width: 600px;
 }
