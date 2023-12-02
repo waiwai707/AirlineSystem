@@ -48,6 +48,7 @@
         <table>
             <h2>Travellar Table</h2>
             <thead>
+            
                 <th style="border-top-left-radius: 10px;">Flight</th>
                 <th>TimeFrame</th>
                 <th>Name</th>
@@ -62,21 +63,11 @@
                 <th style="border-top-right-radius:10px; width: 10%;" >Action </th>
                 <th style="border-top-right-radius:10px; width: 10%;" >Action </th>
                 
-                
+            
               
             </thead>
             
             <tbody class="tbody1">
-                <td>Myanmar Air line</td>
-                <td>16:00</td>
-                <td>John Doe</td>
-                <td>7.10.00</td>
-                <td>120713</td>
-                <td>Male</td>
-                <td>Yangon</td>
-                <td>2 A.M</td>
-                <td>4 Am</td>
-                <td>20.10.23 4A.M</td>
                
                 {% for bcahub in home%}
                     <tr>
@@ -107,25 +98,28 @@
                         <td>
                             {{ bcahub.Arrival_Port}}
                         </td>
-                        
-                        <td>
-                            <a href="{% url 'updateViewtravel' bcahub.id %}" class="text-decoration-none">
-                           <i class="fa fa-pen text-white"></i>
+                       
+                        <td class ="action">          
                         </a>
-                        
-                            
-                        <a href="{% url 'createtravel' %}" >
-                            <td><i class="fa-folder-plus"></i></td> 
+                        <a href="{% url 'updateViewtravel' bcahub.id %}" class="text-decoration-none">
+                            <span class="fa fa-pen text-white"></span>
+                                </i>
                         </a>
-                       </td>
-                    
+        
+                        <a href="{% url 'createtravel' %}"  class="text-decoration-none">
+                       
+                            <i class="fa-solid fa-folder-plus"></i>
                 
-                   
+                         
+                        </a>
+                       
+                        </td>
+                      
+                        </tr>
+                    </tbody>
+                        {% endfor %}
                 </tr>
-                {% endfor %}
-                
-            </tbody>
-         
+           
             <tbody class="tbody2">
                 <td>Myanmar Air line</td>
                 <td>16:00</td>
@@ -262,6 +256,12 @@
                 <td>4 Am</td>
                 <td style="border-bottom-right-radius: 10px;">20.10.23 4A.M</td>
             </tbody>
+         
+       
+                
+            
+            
+            
             
     
               
