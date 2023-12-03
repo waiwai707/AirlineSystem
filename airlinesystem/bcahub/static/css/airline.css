@@ -95,12 +95,14 @@ th{
 tbody{
     height: 40px;
 }
-.tbody1{
-    background-color: aliceblue;
+
+.s{
+    background-color: rgb(176, 204, 228);
+}   
+.h{
+    background-color: rgb(203, 225, 246);
 }
-.tbody2{
-    background-color: rgb(211, 228, 243);
-}
+
 tbody:hover{
     background-color: rgba(207, 208, 210, 0.431);
 }

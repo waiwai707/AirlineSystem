@@ -90,16 +90,21 @@ td:nth-child(n + 2){
 th{
     background-color: #6792E7;
     height: 50px;
+    padding-top: 20%;
 }
 tbody{
     height: 40px;
 }
+.s{
+    background-color: rgb(212, 235, 255);
+}   
+.h{
+    background-color: rgb(211, 228, 243);
+}
 .tbody1{
     background-color: aliceblue;
 }
-.tbody2{
-    background-color: rgb(211, 228, 243);
-}
+
 tbody:hover{
     background-color: rgba(207, 208, 210, 0.431);
 }

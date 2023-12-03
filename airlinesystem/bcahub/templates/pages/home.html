@@ -19,16 +19,16 @@
                 <a href="{% url 'base' %}">
                     <li>Travellar</li>
                 </a>
-                <a href="{% url 'base' %}">
+                <a href="{% url 'baseairline' %}">
                     <li>Airlines</li>
                 </a>
-                <a href="{% url 'base' %}">
+                <a href="{% url 'baserisk' %}">
                     <li>Risk Action</li>
                 </a>
-                <a href="{% url 'base' %}">
+                <a href="{% url 'basecrew' %}">
                     <li>Crew</li>
                 </a>
-                <a href="{% url 'base' %}">
+                <a href="{% url 'basejourney' %}">
                     <li>Journey Search</li>
                 </a>
             </ul>
@@ -70,52 +70,53 @@
                
                 {% for bcahub in data%}
                     <tr>
-                        <td class="h">
+                        <td class="s">
                         {{ bcahub.flight}}
                     </td>
                         <td class="h">
                             {{ bcahub.timeFrame}}
                         </td>
-                        <td class="o">
+                        <td class="s">
                             {{ bcahub.name}}
                         </td>
-                        <td class="t">
+                        <td class="h">
                             {{ bcahub.dob}}
                         </td>
-                        <td class="p">
+                        <td class="s">
                             {{ bcahub.nrc}}
                         </td>
-                        <td>
+                        <td class="h">
                             {{ bcahub.gender}}
                         </td>
-                        <td>
+                        <td class="s">
                             {{ bcahub.depature_port}}
                         </td>
-                        <td>
+                        <td class="s">
                             {{ bcahub.depature_date_time}}
                         </td>
-                        <td>
+                        <td class="h">
                             {{ bcahub.arrival_port}}
                         </td>
-                        <td>
+                        <td class="s">
                             {{ bcahub.arrival_date_time}}
                         </td>
-                        <td class ="action">          
+                        <td class ="h">          
                      
                         
-                            <span class="fa fa-pen text-white">
-                                <a href="{% url 'updateViewtravel' bcahub.id %}" class="text-decoration-none"></a>
-                            </span>
+                            <a href="{% url 'updateViewtravel' bcahub.id %}" class="text-decoration-none">
+                                <span class="fa fa-pen text-white"></span>
+                                    </i>
+                            </a>
                                 
                         
-        
+                        </td>
                        
-                       
-                            <span class="fa-solid fa-folder-plus">
-                                <a href="{% url 'createtravel' %}"  class="text-decoration-none"> </a>
-                            </apan>
-                
-                         
+                       <td class ="s">
+                            
+                            <a href="{% url 'createtravel' %}"  class="text-decoration-none">
+                           
+                                <i class="fa-solid fa-folder-plus"></i>
+                            </a>
                        
                        
                         </td>
