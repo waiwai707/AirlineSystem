@@ -12,8 +12,26 @@
 </head>
 
 <body>
+<style>
+    .Oo{
+    
+        width: 40px;
+        height: 15px;
+        background-color: rgb(194, 226, 243);
+        font-size: 1px;
+        border: 1px solid rgb(79, 39, 27);
+        border-radius: 5px;
+        margin-left: 120%;
+        margin-top: -20%;
+    }
+    .s{
+      padding: 10px;
+    }
+</style>
     <div class="container">
-        
+       
+                    
+                </a>
         <nav>
             <ul>
                 <a href="{% url 'base' %}">
@@ -43,10 +61,21 @@
         </ul>
         {% endif %}
 
+
     <div class="travellersection">
+        
+            <a href="{% url 'createtravel' %}">
+                <button type="button" class="Oo" id="back-button">
+                    <span class="fa-solid fa-folder-plus"></span>
+                </button>
+            </a>
         <h1>Welcome From Myanmar Airline</h1>
         <table>
             <h2>Travellar Table</h2>
+           
+       
+           </div>
+           
             <thead>
             
                 <th style="border-top-left-radius: 10px;">Flight</th>
@@ -60,7 +89,7 @@
                 <th>Arrival Port</th>
                 <th style="border-top-right-radius: 10px;">Arrival Date and Time</th>
                 <th style="border-top-right-radius:10px; width: 10%;" >Action </th>
-                <th style="border-top-right-radius:10px; width: 10%;" >Action </th>
+               
                 
             
               
@@ -111,15 +140,7 @@
                         
                         </td>
                        
-                       <td class ="s">
-                            
-                            <a href="{% url 'createtravel' %}"  class="text-decoration-none">
-                           
-                                <i class="fa-solid fa-folder-plus"></i>
-                            </a>
-                       
-                       
-                        </td>
+                      
                       
                         </tr>
                         {% endfor %}

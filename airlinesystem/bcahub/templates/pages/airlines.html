@@ -12,6 +12,22 @@
 </head>
 
 <body>
+<style>
+    .Oo{
+    
+        width: 40px;
+        height: 15px;
+        background-color: rgb(194, 226, 243);
+        font-size: 1px;
+        border: 1px solid rgb(79, 39, 27);
+        border-radius: 5px;
+        margin-left: 120%;
+        margin-top: -20%;
+    }
+    .s{
+      padding: 10px;
+    }
+</style>
     <div class="container">
         <nav>
             <ul>
@@ -42,6 +58,12 @@
         </ul>
         {% endif %}
     <div class="travellersection">
+        <div class="bb">
+            <a href="{% url 'createairline' %}">
+                <button type="button" class="Oo" id="back-button">
+                    <span class="fa-solid fa-folder-plus"></span>
+                </button>
+            </a>
         <h1>Welcome From Myanmar Airline</h1>
         <table>
             <h2>Airline Table</h2>
@@ -58,7 +80,7 @@
                 <th>Delay Issue</th>
                 <th style="border-top-right-radius: 10px;">Remarks</th>
                 <th style="border-top-right-radius:10px; width: 10%;" >Action </th>
-                <th style="border-top-right-radius:10px; width: 10%;" >Action </th>
+                
             </thead>
             <tbody class="tbody1">
                 {% for bcahub in data%}
@@ -104,16 +126,7 @@
                                 
                         
                         </td>
-                       
-                       <td class ="s">
-                            
-                            <a href="{% url 'createairline' %}"  class="text-decoration-none">
-                           
-                                <i class="fa-solid fa-folder-plus"></i>
-                            </a>
-                       
-                       
-                        </td>
+                     
                       
                         </tr>
                 {% endfor %}    

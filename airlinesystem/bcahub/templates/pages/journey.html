@@ -7,8 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/1c87cdcf14.js" crossorigin="anonymous"></script>
     <title>Journey</title>
-    <link rel="stylesheet" href="{% static 'css/journey.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
 <body>
+<style>
+    .Oo{
+        
+            width: 40px;
+            height: 15px;
+            background-color: rgb(194, 226, 243);
+            font-size: 1px;
+            border: 1px solid rgb(79, 39, 27);
+            border-radius: 5px;
+            margin-left: 120%;
+            margin-top: -20%;
+        }
+    .s{
+      padding: 10px;
+    }
+</style>
     <div class="container">
         <nav>
             <ul>
@@ -40,6 +56,12 @@
         {% endif %}
 
     <div class="travellersection">
+        
+        <a href="{% url 'createjourney' %}">
+            <button type="button" class="Oo" id="back-button">
+                <span class="fa-solid fa-folder-plus"></span>
+            </button>
+        </a>
         <h1>Welcome From Myanmar Airline</h1>
         <table>
             <h2>Journey Table</h2>
@@ -56,7 +78,7 @@
                 <th>Arrival Date and Time</th>
                 <th style="border-top-right-radius: 10px;">Risk Status</th>
                 <th style="border-top-right-radius:10px; width: 10%;" >Action </th>
-                <th style="border-top-right-radius:10px; width: 10%;" >Action </th>
+                
             </thead>
             <tbody class="tbody1">
     
@@ -106,15 +128,7 @@
                         
                         </td>
                        
-                       <td class ="s">
-                            
-                            <a href="{% url 'createjourney' %}"  class="text-decoration-none">
-                           
-                                <i class="fa-solid fa-folder-plus"></i>
-                            </a>
-                       
-                       
-                        </td>
+                    
                       
                         </tr>
                         {% endfor %}
