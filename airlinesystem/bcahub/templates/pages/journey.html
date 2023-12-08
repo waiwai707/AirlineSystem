@@ -5,32 +5,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/1c87cdcf14.js" crossorigin="anonymous"></script>
     <title>Journey</title>
-    <link rel="stylesheet" href="{% static "css/journey.css" %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
 <body>
+<style>
+    .Oo{
+        
+            width: 40px;
+            height: 15px;
+            background-color: rgb(194, 226, 243);
+            font-size: 1px;
+            border: 1px solid rgb(79, 39, 27);
+            border-radius: 5px;
+            margin-left: 120%;
+            margin-top: -20%;
+        }
+    .s{
+      padding: 10px;
+    }
+</style>
     <div class="container">
         <nav>
             <ul>
-                <a href="{% url 'home' %}">
+                <a href="{% url 'base' %}">
                     <li>Travellar</li>
                 </a>
-                <a href="{% url 'airline' %}">
+                <a href="{% url 'baseairline' %}">
                     <li>Airlines</li>
                 </a>
-                <a href="{% url 'risk' %}">
+                <a href="{% url 'baserisk' %}">
                     <li>Risk Action</li>
                 </a>
-                <a href="{% url 'crew' %}">
+                <a href="{% url 'basecrew' %}">
                     <li>Crew</li>
                 </a>
-                <a href="{% url 'journey' %}">
+                <a href="{% url 'basejourney' %}">
                     <li>Journey Search</li>
                 </a>
             </ul>
-            <img src="{% static "img/logo.png" %}" width="150px" style="margin: auto;">
+            <img src="{% static 'img/logo.png' %}" width="150px" style="margin: auto;">
         </nav>
     </div>
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <div class="first" role="alert">{{ message }}</div>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
     <div class="travellersection">
+        
+        <a href="{% url 'createjourney' %}">
+            <button type="button" class="Oo" id="back-button">
+                <span class="fa-solid fa-folder-plus"></span>
+            </button>
+        </a>
         <h1>Welcome From Myanmar Airline</h1>
         <table>
             <h2>Journey Table</h2>
@@ -46,9 +77,65 @@
                 <th>Depature Date and Time</th>
                 <th>Arrival Date and Time</th>
                 <th style="border-top-right-radius: 10px;">Risk Status</th>
+                <th style="border-top-right-radius:10px; width: 10%;" >Action </th>
+                
             </thead>
             <tbody class="tbody1">
-                <td>1</td>
+    
+                {% for bcahub in data%}
+                    <tr>
+                        <td class="s">
+                        {{ bcahub.number}}
+                    </td>
+                        <td class="h">
+                            {{ bcahub.name}}
+                        </td>
+                        <td class="s">
+                            {{ bcahub.dob}}
+                        </td>
+                        <td class="h">
+                            {{ bcahub.father}}
+                        </td>
+                        <td class="s">
+                            {{ bcahub.passport}}
+                        </td>
+                        <td class="h">
+                            {{ bcahub.gender}}
+                        </td>
+                        <td class="s">
+                            {{ bcahub.flightName}}
+                        </td>
+                        <td class="s">
+                            {{ bcahub.sector}}
+                        </td>
+                        <td class="h">
+                            {{ bcahub.depature_date_time}}
+                        </td>
+                        <td class="s">
+                            {{ bcahub.arrival_date_time}}
+                        </td>
+                        <td class="s">
+                            {{ bcahub.risk_satus}}
+                        </td>
+                        <td class ="h">          
+                     
+                        
+                            <a href="{% url 'updateViewjourney' bcahub.id %}" class="text-decoration-none">
+                                <span class="fa fa-pen text-white"></span>
+                                    </i>
+                            </a>
+                                
+                        
+                        </td>
+                       
+                    
+                      
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                       
+                </tr>
+                <!-- <td>1</td>
                 <td>John Doe</td>
                 <td>7.10.00</td>
                 <td>U Ba</td>
@@ -201,7 +288,7 @@
                 <td>sector</td>
                 <td>10.10.23 10 AM</td>
                 <td>10.10.23 11AM</td>
-                <td style="border-bottom-right-radius: 10px;" >Risk Action</td>
+                <td style="border-bottom-right-radius: 10px;" >Risk Action</td> -->
             </tbody>
         </table>
     </div>

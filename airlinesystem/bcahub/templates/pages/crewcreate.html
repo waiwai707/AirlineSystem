@@ -1,0 +1,132 @@
+
+{% block page_content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>data</title>
+</head>
+<body>
+<style>
+    .aa{
+    width:120%;
+    height:620px;
+    border: 1px solid rgb(39, 202, 216);
+    background-color: rgb(157, 207, 207);
+    color: brown;
+    border-radius: 30px  ;
+    
+    
+
+}
+.form-control{
+    width:300px;
+    height:10px;
+    
+   
+   
+    border-radius: 20px;
+    padding:8px;
+    margin-left: 50px;
+    border-bottom: 1px solid #fff;
+   
+    background: transparent;
+    margin-top: 20px;
+}
+.card{
+    width:600px;
+    height:600px;
+   
+    background-color: rgb(192, 239, 239);
+    color: rgb(41, 45, 45);
+    border-radius: 20px 80px 30% 0;
+   margin-top: -40px;
+    margin-left: 20%;
+}
+.submit{
+    width:60px;
+    height: 40px;
+    border: 1px solid rgb(177, 136, 136);
+    margin-top: 10px;
+    border-radius: 10px;
+    background-color: rgb(67, 35, 35);
+    color: aliceblue;
+    margin-left: 20px;
+}
+.hh{
+    font-size: 15px;
+    margin-left: 50px;
+}
+.Oo{
+    
+    width: 40px;
+    height: 15px;
+    background-color: brown;
+    font-size: 1px;
+    border: 1px solid rgb(79, 39, 27);
+    border-radius: 5px;
+    margin-left: 250px;
+    margin-top: 20px;
+}
+</style>
+    
+    <div class="aa">
+        <div class="bb">
+            <a href="{% url 'basecrew' %}">
+                <button type="button" class="Oo" id="back-button">
+                    <span class="dd"></span> 
+                </button>
+            </a>
+        </div><br>
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <div class="messs" role="alert">{{ message }}</div>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <div class="card">
+            <h5 class="hh" id="card-header">Add New Travel Table</h5>
+            <div class="card-body">
+                <form action="{% url 'storecrew' %}" method="POST">
+                    {% csrf_token %}
+                   
+                    <div class="form">
+                       
+                        <label for="flight"><strong>Flight:</strong></label>
+                        <input type="text" class="form-control" id="flight" name="flight" />
+                    </div>
+                    <div class="form">
+                    
+                        <label for="service_status"><strong>Service_Status:</strong></label>
+                        <input type="text" class="form-control" id="service_status" name="service_status" />
+                    </div>
+                    <div class="form">
+                        <label for="depature_port"><strong>Depature_Port:</strong></label>
+                        <input type="text" class="form-control" id="depature_port" name="depature_port" />
+                    </div>
+                    <div class="form">
+                        <label for="arrival_port"><strong>Arrival_Port:</strong></label>
+                        <input type="text" class="form-control" id="arrival_port" name="arrival_port" />
+                    </div>    
+                    <div class="form">
+                        <label for="depature_date_time"><strong>Depature_Date_Time:</strong></label>
+                        <input type="text" class="form-control" id="depature_date_time" name="depature_date_time" />
+                    </div>   
+                    <div class="form">
+                        <label for="arrival_date_time"><strong>Arrival_Date_Time:</strong></label>
+                        <input type="text" class="form-control" id="arrival_date_time" name="arrival_date_time" />
+                    </div>
+                    
+                    <button type="submit" class="submit" id="post-button">Post</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+{% endblock %}
