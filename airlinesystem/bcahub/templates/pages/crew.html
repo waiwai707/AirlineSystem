@@ -5,33 +5,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/1c87cdcf14.js" crossorigin="anonymous"></script>
     <title>Crew</title>
-    <link rel="stylesheet" href="{% static "css/crew.css" %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
 </head>
 <body>
+<style>
+    .Oo{
+        
+            width: 40px;
+            height: 15px;
+            background-color: rgb(194, 226, 243);
+            font-size: 1px;
+            border: 1px solid rgb(79, 39, 27);
+            border-radius: 5px;
+            margin-left: 120%;
+            margin-top: -20%;
+    }
+    .s{
+      padding: 10px;
+    }
+</style>
     <div class="container">
         <nav>
             <ul>
-                <a href="{% url 'home' %}">
+                <a href="{% url 'base' %}">
                     <li>Travellar</li>
                 </a>
-                <a href="{% url 'airline' %}">
+                <a href="{% url 'baseairline' %}">
                     <li>Airlines</li>
                 </a>
-                <a href="{% url 'risk' %}">
+                <a href="{% url 'baserisk' %}">
                     <li>Risk Action</li>
                 </a>
-                <a href="{% url 'crew' %}">
+                <a href="{% url 'basecrew' %}">
                     <li>Crew</li>
                 </a>
-                <a href="{% url 'journey' %}">
+                <a href="{% url 'basejourney' %}">
                     <li>Journey Search</li>
                 </a>
             </ul>
-            <img src="{% static "img/logo.png" %}" width="150px" style="margin: auto;">
+            <img src="{% static 'img/logo.png' %}" width="150px" style="margin: auto;">
         </nav>
     </div>
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <div class="first" role="alert">{{ message }}</div>
+        {% endfor %}
+    </ul>
+    {% endif %}
     <div class="travellersection">
+
+        <a href="{% url 'createcrew' %}">
+            <button type="button" class="Oo" id="back-button">
+                <span class="fa-solid fa-folder-plus"></span>
+            </button>
+        </a>
         <h1>Welcome From Myanmar Airline</h1>
         <table>
             <h2>Crew Table</h2>
@@ -43,8 +73,54 @@
                 <th>Arrival Port</th>
                 <th>Depature Date and Time</th>
                 <th style="border-top-right-radius: 10px;">Arrival Date and Time</th>
+                <th style="border-top-right-radius:10px; width: 10%;" >Action </th>
+                
             </thead>
             <tbody class="tbody1">
+            
+                {% for bcahub in data%}
+                    <tr>
+                        <td class="s">
+                        {{ bcahub.flight}}
+                    </td>
+                        <td class="h">
+                            {{ bcahub.service_status}}
+                        </td>
+                        <td class="s">
+                            {{ bcahub.depature_port}}
+                        </td>
+                        <td class="h">
+                            {{ bcahub.arrival_port}}
+                        </td>
+                        <td class="s">
+                            {{ bcahub.depature_date_time}}
+                        </td>
+                        <td class="h">
+                            {{ bcahub.arrival_date_time}}
+                        </td>
+                        <td class="s">
+                            {{ bcahub.depature_port}}
+                        </td>
+                
+                        <td class ="h">          
+                     
+                        
+                            <a href="{% url 'updateViewcrew' bcahub.id %}" class="text-decoration-none">
+                                <span class="fa fa-pen text-white"></span>
+                                    </i>
+                            </a>
+                                
+                        
+                        </td>
+                       
+                     
+                      
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                       
+                </tr>
+            <!-- <tbody class="tbody1">
                 <td>001</td>
                 <td>Crew</td>
                 <td>BOB</td>
@@ -142,7 +218,7 @@
                 <td>MDY</td>
                 <td>10.10.23 10AM</td>
                 <td>10.10.23 11AP</td>
-            </tbody>
+            </tbody> -->
         </table>
     </div>
 </body>

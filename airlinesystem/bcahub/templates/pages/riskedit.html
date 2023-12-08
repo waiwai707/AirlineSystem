@@ -11,7 +11,7 @@
 
 <div class="container my-3">
     <div class="d-flex justify-content-end">
-         <a href="{% url 'base' %}">
+         <a href="{% url 'baserisk' %}">
             <button type="button" class="btn text-white" style="background-color:#800517">
                 <i class="fa-solid fa-pencil"></i>
             </button>
@@ -30,52 +30,51 @@
     <h5 class="card-hearder text-white" style="background-color: #800517">Edit Travel customer</h5>
     <div class="card-body">
         
-        <form action="{% url 'updatetravel' air.id %}" method="POST">
+        <form action="{% url 'updaterisk' air.id %}" method="POST">
             {% csrf_token %}
+   
             <div class="form">
                     
-                <label for="flight"><strong>Flight:</strong></label>
-                <input type="text" class="form-control" id="flight" name="flight" value="{{air.flight}}"/>
+                <label for="number"><strong>Number:</strong></label>
+                <input type="text" class="form-control" id="number" name="number" value="{{air.number}}" />
             </div>
             <div class="form">
-                    
-                <label for="timeFrame"><strong>TimeFrame:</strong></label>
-                <input type="text" class="form-control" id="timeFrame" name="timeFrame" value="{{air.timeFrame}}"/>
-            </div>
-            <div class="form">
+            
                 <label for="name"><strong>Name:</strong></label>
                 <input type="text" class="form-control" id="name" name="name" value="{{air.name}}"/>
             </div>
             <div class="form">
                 <label for="dob"><strong>DOB:</strong></label>
-                <input type="text" class="form-control" id="dob" name="dob" value="{{air.dob}}"/>
+                <input type="text" class="form-control" id="dob" name="dob" value="{{air.dob}}" />
+            </div>
+            <div class="form">
+                <label for="father"><strong>Father:</strong></label>
+                <input type="text" class="form-control" id="father" name="father" value="{{air.father}}" />
             </div>    
             <div class="form">
-                <label for="nrc"><strong>NRC:</strong></label>
-                <input type="text" class="form-control" id="nrc" name="nrc" value="{{air.nrc}}"/>
+                <label for="passport"><strong>Passport:</strong></label>
+                <input type="text" class="form-control" id="passport" name="passport" value="{{air.passport}}"/>
             </div>   
             <div class="form">
                 <label for="gender"><strong>Gender:</strong></label>
-                <input type="text" class="form-control" id="gender" name="gender" value="{{air.gender}}"/>
+                <input type="text" class="form-control" id="gender" name="gender" value="{{air.gender}}" />
             </div>
             <div class="form">
-                <label for="depature_port"><strong>Depature_Port:</strong></label>
-                <input type="text" class="form-control" id="depature_port" name="depature_port" value="{{air.depature_port}}"/>
+                <label for="nrc"><strong>NRC:</strong></label>
+                <input type="text" class="form-control" id="nrc" name="nrc" value="{{air.nrc}}"/>
             </div>
                 
             <div class="form">
-                <label for="depature_date_time"><strong>Depature_Date_time:</strong></label>
-                <input type="text" class="form-control" id="depature_date_time" name="depature_date_time" value="{{air.depature_date_time}}" />
+                <label for="nationality"><strong>Nationality:</strong></label>
+                <input type="text" class="form-control" id="nationality" name="nationality" value="{{air.nationality}}"/>
             </div>    
                 
             <div class="form">
-                <label for="arrival_port"><strong>Arrival_Port:</strong></label>
-                <input type="text" class="form-control" id="arrival_port" name="arrival_port" value="{{air.arrival_port}}"/>
+                <label for="status"><strong>Status:</strong></label>
+                <input type="text" class="form-control" id="status" name="status" value="{{air.status}}"/>
             </div>    
-            <div class="form">
-                <label for="arrival_date_time"><strong>Arrival_Date_Time:</strong></label>
-                <input type="text" class="form-control" id="arrival_date_time" name="arrival_date_time" value="{{air.arrival_date_time}}"/>
-            </div> 
+          
+           
            
   
             <button type="submit" class="btn my-3 text-white" style="background-color: #800517">Update</button>

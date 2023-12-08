@@ -12,23 +12,41 @@
 </head>
 
 <body>
+<style>
+    .Oo{
+    
+        width: 40px;
+        height: 15px;
+        background-color: rgb(194, 226, 243);
+        font-size: 1px;
+        border: 1px solid rgb(79, 39, 27);
+        border-radius: 5px;
+        margin-left: 120%;
+        margin-top: -20%;
+    }
+    .s{
+      padding: 10px;
+    }
+</style>
     <div class="container">
-        
+       
+                    
+                </a>
         <nav>
             <ul>
                 <a href="{% url 'base' %}">
                     <li>Travellar</li>
                 </a>
-                <a href="{% url 'base' %}">
+                <a href="{% url 'baseairline' %}">
                     <li>Airlines</li>
                 </a>
-                <a href="{% url 'base' %}">
+                <a href="{% url 'baserisk' %}">
                     <li>Risk Action</li>
                 </a>
-                <a href="{% url 'base' %}">
+                <a href="{% url 'basecrew' %}">
                     <li>Crew</li>
                 </a>
-                <a href="{% url 'base' %}">
+                <a href="{% url 'basejourney' %}">
                     <li>Journey Search</li>
                 </a>
             </ul>
@@ -43,10 +61,21 @@
         </ul>
         {% endif %}
 
+
     <div class="travellersection">
+        
+            <a href="{% url 'createtravel' %}">
+                <button type="button" class="Oo" id="back-button">
+                    <span class="fa-solid fa-folder-plus"></span>
+                </button>
+            </a>
         <h1>Welcome From Myanmar Airline</h1>
         <table>
             <h2>Travellar Table</h2>
+           
+       
+           </div>
+           
             <thead>
             
                 <th style="border-top-left-radius: 10px;">Flight</th>
@@ -60,7 +89,7 @@
                 <th>Arrival Port</th>
                 <th style="border-top-right-radius: 10px;">Arrival Date and Time</th>
                 <th style="border-top-right-radius:10px; width: 10%;" >Action </th>
-                <th style="border-top-right-radius:10px; width: 10%;" >Action </th>
+               
                 
             
               
@@ -70,55 +99,48 @@
                
                 {% for bcahub in data%}
                     <tr>
-                        <td class="h">
+                        <td class="s">
                         {{ bcahub.flight}}
                     </td>
                         <td class="h">
                             {{ bcahub.timeFrame}}
                         </td>
-                        <td class="o">
+                        <td class="s">
                             {{ bcahub.name}}
                         </td>
-                        <td class="t">
+                        <td class="h">
                             {{ bcahub.dob}}
                         </td>
-                        <td class="p">
+                        <td class="s">
                             {{ bcahub.nrc}}
                         </td>
-                        <td>
+                        <td class="h">
                             {{ bcahub.gender}}
                         </td>
-                        <td>
+                        <td class="s">
                             {{ bcahub.depature_port}}
                         </td>
-                        <td>
+                        <td class="s">
                             {{ bcahub.depature_date_time}}
                         </td>
-                        <td>
+                        <td class="h">
                             {{ bcahub.arrival_port}}
                         </td>
-                        <td>
+                        <td class="s">
                             {{ bcahub.arrival_date_time}}
                         </td>
-                        <td class ="action">          
+                        <td class ="h">          
                      
                         
-                            <span class="fa fa-pen text-white">
-                                <a href="{% url 'updateViewtravel' bcahub.id %}" class="text-decoration-none"></a>
-                            </span>
+                            <a href="{% url 'updateViewtravel' bcahub.id %}" class="text-decoration-none">
+                                <span class="fa fa-pen text-white"></span>
+                                    </i>
+                            </a>
                                 
                         
-        
-                       
-                       
-                            <span class="fa-solid fa-folder-plus">
-                                <a href="{% url 'createtravel' %}"  class="text-decoration-none"> </a>
-                            </apan>
-                
-                         
-                       
-                       
                         </td>
+                       
+                      
                       
                         </tr>
                         {% endfor %}
